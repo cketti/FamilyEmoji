@@ -461,7 +461,7 @@ function setEmojiFromFragment() {
     var codepointString = toCodePoints(hash).map(function (codepoint) {
         return "U+" + Number(codepoint).toString(16).toUpperCase()
     }).join(", ");
-    console.log(codepointString);
+    // console.log(codepointString);
 
     try {
         family = parseEmojiSequence(hash && hash.length > 0 ? hash.substring(1) : "");
@@ -502,7 +502,6 @@ $(document).ready(function () {
     $(window).on('popstate', function() {
         setEmojiFromFragment();
     }).keydown(function(event) {
-        console.log("key: " + event.which);
         if (event.which === 'R'.charCodeAt(0)) {
             family = parseEmojiSequence("👨‍👩‍👧‍👦");
             drawFamily();
