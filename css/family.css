@@ -49,9 +49,9 @@ header h1 {
 }
 
 .skin-none, .skin-tone-1-2, .skin-tone-3, .skin-tone-4, .skin-tone-5, .skin-tone-6 {
-    margin: 0.5em;
-    width: 75px;
-    height: 75px;
+    margin: 5px;
+    width: 50px;
+    height: 50px;
     display: block;
     text-indent: 100%;
     white-space: nowrap;
@@ -60,7 +60,7 @@ header h1 {
 
 .skin-none {
     margin-left: 0;
-    margin-right: 2em;
+    margin-right: 12px;
     background-color: #ffdd67;
 }
 
@@ -91,10 +91,10 @@ header h1 {
 }
 
 .person-type img {
-    margin-top: 0.5em;
-    margin-right: 0.5em;
-    width: 200px;
-    height: 200px;
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 120px;
+    height: 120px;
     padding: 1px;
 }
 
