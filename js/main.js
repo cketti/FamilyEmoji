@@ -417,11 +417,10 @@ function parseEmojiSequence(sequence) {
             }
         }
 
-        if (!sequence.startsWith(ZWJ)) {
-            throw "Expected zero width joiner";
+        // Skip ZWJ if present
+        if (sequence.startsWith(ZWJ)) {
+            sequence = sequence.substring(1);
         }
-
-        sequence = sequence.substring(1);
     }
 
     throw "Sequence ended with ZWJ"

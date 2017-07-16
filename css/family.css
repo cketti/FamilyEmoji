@@ -31,6 +31,10 @@ header h1 {
     min-height: 400px;
 }
 
+.full-width {
+    width: 100%;
+}
+
 #family {
     flex: 1;
     min-height: 300px;
@@ -102,4 +106,10 @@ header h1 {
     border: 1px solid #ccc;
     background-color: #eee;
     padding: 0;
+}
+
+#sample-family {
+    width: 200px;
+    margin: 0 auto;
+    display: block;
 }

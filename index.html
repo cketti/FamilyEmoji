@@ -35,19 +35,26 @@
 </header>
 
 <div id="content">
-    <div>
-        <a class="dropdown-button btn" href="#" data-activates="dropdown-add-person"><i class="material-icons left">add</i>
-            Add person</a>
+    <div class="full-width row">
+        <div class="col s6">
+            <a class="dropdown-button btn" href="#" data-activates="dropdown-add-person">
+                <i class="material-icons left">add</i>Add person
+            </a>
+            <!-- Dropdown Structure -->
+            <ul id='dropdown-add-person' class='dropdown-content'>
+                <li><a onclick="addPerson('woman')">Woman</a></li>
+                <li><a onclick="addPerson('man')">Man</a></li>
+                <li class="divider"></li>
+                <li><a onclick="addPerson('girl')">Girl</a></li>
+                <li><a onclick="addPerson('boy')">Boy</a></li>
+                <!--<li><a href="#!">Baby</a></li>-->
+            </ul>
+        </div>
+        <div class="col s6 right-align">
+            <a class="btn" href="#" onclick="$('#modal-info').modal('open'); return false;">
+                <i class="material-icons left">info</i>About</a>
+        </div>
     </div>
-    <!-- Dropdown Structure -->
-    <ul id='dropdown-add-person' class='dropdown-content'>
-        <li><a onclick="addPerson('woman')">Woman</a></li>
-        <li><a onclick="addPerson('man')">Man</a></li>
-        <li class="divider"></li>
-        <li><a onclick="addPerson('girl')">Girl</a></li>
-        <li><a onclick="addPerson('boy')">Boy</a></li>
-        <!--<li><a href="#!">Baby</a></li>-->
-    </ul>
 
     <svg id="family" preserveAspectRatio="xMidYMid meet" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
         <g id="parents-container"></g>
@@ -74,7 +81,7 @@
                     and is licensed under <a class="grey-text text-lighten-4" href="https://creativecommons.org/licenses/by/4.0/legalcode">CC-BY 4.0</a>
                 </div>
                 <div class="col s4 right-align">
-                    Created by <a class="grey-text text-lighten-4" href="http://cketti.de/">cketti</a>
+                    Created by <a class="grey-text text-lighten-4" href="https://twitter.com/cketti">cketti</a>
                 </div>
             </div>
         </div>
@@ -108,7 +115,57 @@
     </div>
     <div class="modal-footer">
         <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat" onclick="return false;">Cancel</a>
-        <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat remove-person" onclick="removePerson(); return false;">Delete</a>
+        <a href="#" class="modal-action modal-close waves-effect waves-red btn-flat remove-person" onclick="removePerson(); return false;">Remove person</a>
+    </div>
+</div>
+
+<div id="modal-info" class="modal">
+    <div class="modal-content">
+        <h4>About family-emoji.org</h4>
+
+        <p>
+            This site allows you to create emoji <a href="https://en.wikipedia.org/wiki/Zero-width_joiner">zero-width joiner (ZWJ)</a> sequences for families of arbitrary size and skin tone combinations.
+        </p>
+        <img id="sample-family" src="img/sample_family.svg">
+        <p>
+            <a href="https://emojipedia.org/">Emojipedia</a> has a great blog post on the technical details and platform support for various ZWJ sequences:
+            <a href="https://blog.emojipedia.org/why-there-arent-black-family-emojis/">Why There Aren't Black Family Emojis</a>.
+        </p>
+        <br>
+        <h5>How do I change the composition and appearance of the family?</h5>
+        <p>
+            To <strong>add a person</strong> press the button «Add person» in the upper left corner. A dialog will pop up allowing you to select what type of person to add.<br>
+            To <strong>change the appearance</strong> of a family member click on the person. You will see a dialog that allows you to change the gender or skin tone of the person.
+            If you want to <strong>remove a person</strong> press the «Remove person» button at the bottom of that dialog.
+        </p>
+        <h5>I assembled my dream family. Now what?</h5>
+        <p>
+            Use the «Copy» button at the bottom of this site to copy the emoji ZWJ sequence representing the configured family to the clipboard. You can now paste it to the application of your choice, e.g. an instant messaging app to send the family emoji to a friend.<br>
+            However, it's possible that either your platform, or the recipient's platform, or both, don't support that particular emoji sequence. Please see the Emojipedia blog post linked above for more information on platform support.
+        </p>
+        <p>
+            The URL of this website is automatically updated when you make changes to the family. So simply copying the URL from your browser's address bar and sending it to someone else will allow them to open this website with your family configuration.
+        </p>
+        <h5>Limitations</h5>
+        <p>
+            Currently the person configuration is limited to the <a href="https://en.wikipedia.org/wiki/Gender_binary">gender binary</a>. Contributions that add support for the gender-neutral emojis added in <a href="https://emojipedia.org/emoji-5.0/">Emoji 5.0</a> are very welcome.
+        </p>
+        <p>
+            <a href="https://emojipedia.org/baby/">Babies</a> and <a href="https://emojipedia.org/older-adult/">older adults</a> are currently not supported.
+        </p>
+        <p>
+            Mixing persons without specified skin color (displayed as yellow) and persons with a skin tone is deliberately not supported. That's why all family members will change skin color when switching from using no skin tone to using skin tones and vice versa.
+        </p>
+        <p>
+            A family (in the context of this site) consists of at least one adult and one child. Hence removing the last remaining person in each category is not possible.
+        </p>
+        <h5>Contribute</h5>
+        <p>
+            To report bugs, request features, or contribute code please head over to GitHub: <a href="https://github.com/cketti/FamilyEmoji">https://github.com/cketti/FamilyEmoji</a>.
+        </p>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="modal-action modal-close waves-effect waves-green btn-flat" onclick="return false;">Ok</a>
     </div>
 </div>
 
